@@ -1,14 +1,14 @@
 # ISSO Telegram Notifier 🔔
 
-Get ISSO New Comment | Edit Comment | Delete Comment Notifications on Telegram.
+Get notification on Telegram if someone create, edit or delete comment on your isso comment system.
 
-## 💡 How does it Works?
+## 💡 How does it work?
 
-using `tail` and `grep` to watch the log and Match the Current log Keyword once it Matched you will Get notfication alert on Telegram
+Using `tail` and `grep` to watch the log file and Match the Current log Keyword. Once it matches, you will Get notfication alert on Telegram.
 
-## Setup 🔧
+## 🔧 ISSO Configuration 
 
-**📕 Note** - Don't Setup SMPT Email Notification if you are going to use this Notification Method - Use `stdout` - <https://posativ.org/isso/docs/configuration/server/#general>
+**:warning: Note** - Don't Setup SMPT Email Notification if you are going to use this Notification Method - Use `stdout` - <https://posativ.org/isso/docs/configuration/server/#general>
 
 **📕 Example Conf for Log**:
 
@@ -22,11 +22,17 @@ max-age = 15m
 notify = stdout
 log-file = /home/isso/issocomments.log
 ```
-
-- Download the bash file on your linux server `root` location or `home`
-- Add your Bot Token, Chat id, Log file location, Telegram Message in the Bash file
-- Setup Permission `chmod +x notify.sh`
-- Next Setup `systemd` for Running this script continuously - <https://github.com/mskian/isso-telegram-notifier/blob/main/issonotify.service>
+## Notification Script Setup
+- Download the [notify.sh file](https://github.com/mskian/isso-telegram-notifier/blob/main/notify.sh) on your linux server in `root` or `home` (Home Recommended)
+- Open the file and add these values (Required) (Get Chat ID from here - <https://t.me/@chatidx_bot>)
+```
+API= Telegram Bot API Key
+CHATID= Telegram Chat ID
+MESSAGE= "New Comment Action on example.com"
+LOGFILE= Path of the isso log
+```
+- Now, Make it executable `chmod +x notify.sh`
+- Next Setup `systemd` for Running this script continuously 
 
 ```bash
 
@@ -35,12 +41,14 @@ cd /etc/systemd/system
 # Create New Serivice File
 touch issonotify.service
 
-# Add the Servie file conf for isso Comments log Notification
+# Create a Service file for systemd service
 nano issonotify.service
 
 ```
 
-- After all setup Start the service
+- Now paste everything from <https://github.com/mskian/isso-telegram-notifier/blob/main/issonotify.service> and save it.
+
+- Reload the systemd and enable the issonotify service
 
 ```bash
 systemctl daemon-reload
@@ -48,7 +56,7 @@ systemctl enable issonotify
 systemctl start issonotify
 ```
 
-- Check Status
+- You can Check the service status with
 
 ```bash
 systemctl status issonotify
