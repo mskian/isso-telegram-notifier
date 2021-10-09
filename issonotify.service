@@ -1,0 +1,14 @@
+[Unit]
+Description=isso telegram notification
+Requires=network.target
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/isso/
+ExecStart=/bin/bash /home/isso/notify.sh
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
