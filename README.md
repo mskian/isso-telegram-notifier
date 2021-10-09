@@ -10,7 +10,7 @@ using `tail` and `grep` to watch the log and Match the Current log Keyword once 
 
 **📕 Note** - Don't Setup SMPT Email Notification if you are going to use this Notification Method - Use `stdout` - <https://posativ.org/isso/docs/configuration/server/#general>
 
-**📕 EXample Conf for Log**:
+**📕 Example Conf for Log**:
 
 ```bash
 [general]
