@@ -2,15 +2,15 @@
 
 Get ISSO New Comment | Edit Comment | Delete Comment Notifications on Telegram.
 
-## How does it Works?
+## 💡 How does it Works?
 
 using `tail` and `grep` to watch the log and Match the Current log Keyword once it Matched you will Get notfication alert on Telegram
 
-## Setup
+## Setup 🔧
 
-**Note** - Don't Setup SMPT Email Notification if you are going to use this Notification Method - Use `stdout` - <https://posativ.org/isso/docs/configuration/server/#general>
+**📕 Note** - Don't Setup SMPT Email Notification if you are going to use this Notification Method - Use `stdout` - <https://posativ.org/isso/docs/configuration/server/#general>
 
-**EXample Conf for Log**:
+**📕 EXample Conf for Log**:
 
 ```bash
 [general]
@@ -54,6 +54,6 @@ systemctl start issonotify
 systemctl status issonotify
 ```
 
-## LICENSE
+## LICENSE ☑
 
 MIT
