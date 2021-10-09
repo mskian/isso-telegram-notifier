@@ -26,7 +26,7 @@ log-file = /home/isso/issocomments.log
 - Download the bash file on your linux server `root` location or `home`
 - Add your Bot Token, Chat id, Log file location, Telegram Message in the Bash file
 - Setup Permission `chmod +x notify.sh`
-- Next Setup `systemd` for Running this script continuously
+- Next Setup `systemd` for Running this script continuously - <https://github.com/mskian/isso-telegram-notifier/blob/main/issonotify.service>
 
 ```bash
 
