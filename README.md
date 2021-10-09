@@ -8,6 +8,21 @@ using `tail` and `grep` to watch the log and Match the Current log Keyword once 
 
 ## Setup
 
+**Note** - Don't Setup SMPT Email Notification if you are going to use this Notification Method - Use `stdout` - <https://posativ.org/isso/docs/configuration/server/#general>
+
+**EXample Conf for Log**:
+
+```bash
+[general]
+dbpath = /home/isso/issocomments.db
+host =
+    http://example.com/
+    https://example.com/
+max-age = 15m
+notify = stdout
+log-file = /home/isso/issocomments.log
+```
+
 - Download the bash file on your linux server `root` location or `home`
 - Add your Bot Token, Chat id, Log file location, Telegram Message in the Bash file
 - Setup Permission `chmod +x notify.sh`
