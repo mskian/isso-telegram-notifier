@@ -43,7 +43,7 @@ LOGFILE= Path of the isso log
 
 cd /etc/systemd/system
 
-# Create New Serivice File
+# Create New Service File
 touch issonotify.service
 
 # Create a Service file for systemd service
